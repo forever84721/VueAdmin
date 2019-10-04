@@ -1,13 +1,15 @@
 <template>
-  <el-scrollbar
-    wrap-class="el-scrollbar-wrap"
-    wrap-style
-    view-style="font-weight: bold;"
-    view-class="view-box"
-    :native="false"
-  >
-    <MenuItem :menuItems="testMenu" :depth="1"></MenuItem>
-  </el-scrollbar>
+  <div class="SidebarCcontainerExpand">
+    <el-scrollbar
+      wrap-class="el-scrollbar-wrap"
+      wrap-style
+      view-style="font-weight: bold;"
+      view-class="view-box"
+      :native="false"
+    >
+      <MenuItem :menuItems="testMenu" :depth="1" :expand="gatExpand"></MenuItem>
+    </el-scrollbar>
+  </div>
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
@@ -19,6 +21,10 @@ import MenuItem from './MenuItem.vue';
   }
 })
 export default class Menu extends Vue {
+  @Prop() private expand!: boolean;
+  created() {
+    console.log(this.expand);
+  }
   private testMenu: MenuItemModel[] = [
     { Id: 0, Name: 'Home', Children: [], ShowChildren: false },
     {
@@ -105,9 +111,19 @@ export default class Menu extends Vue {
     { Id: 29, Name: 'Menu-29', Children: [], ShowChildren: false },
     { Id: 30, Name: 'Menu-30', Children: [], ShowChildren: false }
   ];
+  get gatExpand() {
+    return this.expand;
+  }
 }
 </script>
 <style scoped lang="scss">
+.SidebarCcontainerExpand {
+  height: 100vh;
+  width: 200px;
+  transition: 0.3s;
+}
+.SidebarCcontainer {
+}
 .el-scrollbar {
   max-height: calc(100vh + 17px);
 }

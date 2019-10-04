@@ -6,16 +6,24 @@
         :style="'padding-left:'+depth*10+'px'"
         @click="menu.ShowChildren=!menu.ShowChildren"
       >
-        <span>{{menu.Name}}</span>
+        <div>
+          <i class="el-icon-s-cooperation"></i>
+          <span>{{menu.Name}}</span>
+        </div>
         <i
           v-if="menu.Children.length"
           class="el-icon-arrow-down ts1"
           :class="{'Rotate180':menu.ShowChildren}"
         ></i>
       </div>
-      <div v-if="menu.Children.length">
+      <div v-if="menu.Children.length && gatExpand">
         <el-collapse-transition>
-          <MenuItem v-if="menu.ShowChildren" :menuItems="menu.Children" :depth="depth+1"></MenuItem>
+          <MenuItem
+            v-if="menu.ShowChildren"
+            :menuItems="menu.Children"
+            :expand="gatExpand"
+            :depth="depth+1"
+          ></MenuItem>
         </el-collapse-transition>
       </div>
     </div>
@@ -28,6 +36,13 @@ import MenuItemModel from '@/Models/MenuItemModel';
 export default class MenuItem extends Vue {
   @Prop() private menuItems!: MenuItemModel[];
   @Prop() private depth!: number;
+  @Prop() private expand!: boolean;
+  created() {
+    console.log(this.expand);
+  }
+  get gatExpand() {
+    return this.expand;
+  }
 }
 </script>
 <style scoped lang="scss">

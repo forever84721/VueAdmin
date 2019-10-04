@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <div class="sidebar-container">
-      <Menu></Menu>
+    <Menu :expand="IsExpand"></Menu>
+    <div class="right">
+      <button @click="IsExpand=!IsExpand">123</button>
     </div>
-    <div class="right"></div>
     <!-- <div id="nav">
       <router-link to="/">Home</router-link>|
       <router-link to="/about">About</router-link>
@@ -19,7 +19,9 @@ import Menu from './components/Menu/Menu.vue';
     Menu
   }
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  private IsExpand = true;
+}
 </script>
 <style lang="scss">
 body {
@@ -33,10 +35,6 @@ body {
 #app {
   display: flex;
   height: 100vh;
-}
-.sidebar-container {
-  height: 100vh;
-  width: 200px;
 }
 .right {
   width: 100%;

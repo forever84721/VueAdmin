@@ -1,0 +1,22 @@
+export const enUS = {
+  Region: 'Region',
+  City: 'City',
+  Company: 'Company',
+  Department: 'Department',
+  Section: 'Section',
+  Search: 'Search',
+  Clear: 'Clear',
+  Name: 'Name',
+  ChineseName: 'Chinese Name',
+  JobPosition: 'Job Position',
+  Contacts: 'Contacts',
+  EMail: 'E-Mail',
+  EMails: 'E-Mails',
+  Assistants: 'Assistants',
+  OfficePhoneNo: 'Office Phone No.',
+  Type: 'Type',
+  PhoneNo: 'Phone No.',
+  Extension: 'Extension',
+  Back: 'Back',
+  Profile: 'Profile'
+};

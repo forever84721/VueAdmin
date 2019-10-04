@@ -1,0 +1,22 @@
+export const zhHK = {
+  Region: '地區',
+  City: '城市',
+  Company: '公司',
+  Department: '部門',
+  Section: '分部',
+  Search: '搜尋',
+  Clear: '清除',
+  Name: '名稱',
+  ChineseName: '中文名',
+  JobPosition: '職位',
+  Contacts: '聯絡電話',
+  EMail: '電郵地址',
+  EMails: '電郵地址',
+  Assistants: '助理',
+  OfficePhoneNo: '辦公室電話',
+  Type: '類型',
+  PhoneNo: '電話號碼',
+  Extension: '內線',
+  Back: '返回',
+  Profile: '檢視'
+};

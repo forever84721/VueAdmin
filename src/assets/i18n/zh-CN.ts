@@ -1,0 +1,22 @@
+export const zhCN = {
+  Region: '地区',
+  City: '城市',
+  Company: '公司',
+  Department: '部门',
+  Section: '分部',
+  Search: '搜寻',
+  Clear: '清除',
+  Name: '名称',
+  ChineseName: '中文名',
+  JobPosition: '职位',
+  Contacts: '联络电话',
+  EMail: '电邮地址',
+  EMails: '电邮地址',
+  Assistants: '助理',
+  OfficePhoneNo: '办公室电话',
+  Type: '类型',
+  PhoneNo: '电话号码',
+  Extension: '内线',
+  Back: '返回',
+  Profile: '检视'
+};

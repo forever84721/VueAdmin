@@ -1,5 +1,5 @@
 <template>
-  <div class="SidebarCcontainerExpand">
+  <div class="SidebarCcontainerExpand" :class="{'SidebarCcontainerHidden':!gatExpand}">
     <el-scrollbar
       wrap-class="el-scrollbar-wrap"
       wrap-style
@@ -22,9 +22,7 @@ import MenuItem from './MenuItem.vue';
 })
 export default class Menu extends Vue {
   @Prop() private expand!: boolean;
-  created() {
-    console.log(this.expand);
-  }
+  created() {}
   private testMenu: MenuItemModel[] = [
     { Id: 0, Name: 'Home', Children: [], ShowChildren: false },
     {
@@ -82,7 +80,19 @@ export default class Menu extends Vue {
       ShowChildren: false
     },
     { Id: 2, Name: 'Menu-2', Children: [], ShowChildren: false },
-    { Id: 3, Name: 'Menu-3', Children: [], ShowChildren: false },
+    {
+      Id: 3,
+      Name: 'Menu-3',
+      Children: [
+        {
+          Id: 301,
+          Name: 'Menu-301',
+          Children: [],
+          ShowChildren: false
+        }
+      ],
+      ShowChildren: false
+    },
     { Id: 4, Name: 'Menu-4', Children: [], ShowChildren: false },
     { Id: 5, Name: 'Menu-5', Children: [], ShowChildren: false },
     { Id: 6, Name: 'Menu-6', Children: [], ShowChildren: false },
@@ -120,24 +130,15 @@ export default class Menu extends Vue {
 .SidebarCcontainerExpand {
   height: 100vh;
   width: 200px;
-  transition: 0.3s;
+  min-width: 200px;
+  transition: 0.5s;
 }
-.SidebarCcontainer {
+.SidebarCcontainerHidden {
+  width: 60px;
+  min-width: 60px;
 }
 .el-scrollbar {
   max-height: calc(100vh + 17px);
-}
-.MenuItem {
-  min-height: 60px;
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-  // justify-content: center;
-}
-.MenuItem:hover {
-  background: rgba(131, 182, 65, 0.8);
 }
 </style>
 <style lang="scss">

@@ -2,13 +2,16 @@
   <div id="app">
     <Menu :expand="IsExpand"></Menu>
     <div class="right">
-      <Header :expand="IsExpand" @ExpandClickEvent="IsExpand=!IsExpand"></Header>
+      <Header
+        :expand="IsExpand"
+        @ExpandClickEvent="IsExpand = !IsExpand"
+      ></Header>
+      <router-view />
     </div>
     <!-- <div id="nav">
       <router-link to="/">Home</router-link>|
       <router-link to="/about">About</router-link>
-    </div>
-    <router-view />-->
+    </div>-->
   </div>
 </template>
 <script lang="ts">
@@ -37,6 +40,7 @@ body {
 #app {
   display: flex;
   height: 100vh;
+  overflow: hidden;
 }
 .right {
   // display: flex;
@@ -44,9 +48,16 @@ body {
   height: 100%;
   background-color: rgb(197, 96, 96);
 }
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 200px;
-  min-height: 400px;
+.flex-c {
+  display: flex;
+  flex-direction: column;
+}
+.flex-r {
+  display: flex;
+  flex-direction: row;
+}
+.ac {
+  align-items: center;
 }
 // #nav {
 //   padding: 30px;

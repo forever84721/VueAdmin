@@ -12,6 +12,8 @@
     "ordered-imports": false,
     "quotemark": [true, "single"],
     "trailing-comma": false,
-    "arrow-parens": false
+    "arrow-parens": false,
+    "no-empty": false,
+    "no-empty-interface": false
   }
 }

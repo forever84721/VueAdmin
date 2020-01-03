@@ -1,5 +1,5 @@
 <template>
-  <div class="SidebarCcontainerExpand" :class="{'SidebarCcontainerHidden':!gatExpand}">
+  <div class="SidebarCcontainerExpand" :class="{ SidebarCcontainerHidden: !gatExpand }">
     <el-scrollbar
       wrap-class="el-scrollbar-wrap"
       wrap-style
@@ -22,7 +22,7 @@ import MenuItem from './MenuItem.vue';
 })
 export default class Menu extends Vue {
   @Prop() private expand!: boolean;
-  created() {}
+  public created() {}
   private testMenu: MenuItemModel[] = [
     { Id: 0, Name: 'Home', Children: [], ShowChildren: false },
     {

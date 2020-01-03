@@ -4,15 +4,15 @@
       <!-- ----- -->
       <div
         class="MenuItem ts1"
-        :style="'padding-left:'+depth*10+'px'"
-        @click="menu.ShowChildren=!menu.ShowChildren"
-        :class="{'MenuItemShrink':!IsExpand}"
+        :style="'padding-left:' + depth * 10 + 'px'"
+        @click="menu.ShowChildren = !menu.ShowChildren"
+        :class="{ MenuItemShrink: !IsExpand }"
       >
         <div>
           <i class="el-icon-s-cooperation"></i>
 
           <transition name="fade-in">
-            <span class="ts" v-if="IsExpand">{{menu.Name}}</span>
+            <span class="ts" v-if="IsExpand">{{ menu.Name }}</span>
           </transition>
         </div>
 
@@ -20,7 +20,7 @@
         <i
           v-if="menu.Children.length && IsExpand"
           class="el-icon-arrow-down ExpandButton ts1"
-          :class="{'Rotate180':menu.ShowChildren}"
+          :class="{ Rotate180: menu.ShowChildren }"
         ></i>
         <!-- </transition> -->
       </div>
@@ -31,7 +31,7 @@
             v-if="menu.ShowChildren"
             :menuItems="menu.Children"
             :expand="IsExpand"
-            :depth="depth+1"
+            :depth="depth + 1"
           ></MenuItem>
         </el-collapse-transition>
       </div>
@@ -61,7 +61,7 @@ export default class MenuItem extends Vue {
   @Prop() private menuItems!: MenuItemModel[];
   @Prop() private depth!: number;
   @Prop() private expand!: boolean;
-  created() {}
+  public created() {}
   get IsExpand() {
     return this.expand;
   }
